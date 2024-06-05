@@ -8,8 +8,8 @@ const {
 
 const router = express.Router();
 
-router.get("/", getAccounts);
-// router.get("/:id", getAccount);
 router.get("/me", auth, getUserInfo);
+router.get("/", getAccounts);
+router.get("/:id", getAccount);
 
 module.exports = router;
