@@ -1,0 +1,127 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f4f4f4;
+}
+
+.container {
+    text-align: center;
+    padding: 20px;
+    background: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    width: 100px;
+    height: auto;
+    display: block;
+    margin: 0 auto 20px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #fc4c02;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #e53c00;
+}
+
+a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+/* Add styles for activities */
+.activity {
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+#activities-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+h1 {
+    text-align: center;
+}
+
+.activity:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.activity h2 {
+    margin-top: 0;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.activity p {
+    margin: 5px 0;
+    color: #666;
+}
+
+.activity-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.activity-details span {
+    font-size: 0.9rem;
+    color: #999;
+}
+
+.activity-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.activity-actions button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.activity-actions button:hover {
+    background-color: #0056b3;
+}
+
+#show-activities {
+    margin-top: 20px;
+    background-color: white;
+    color: black;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+#show-activities:hover {
+    background-color: #f0f0f0;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+}
