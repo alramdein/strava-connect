@@ -24,7 +24,7 @@ const getUserInfo = async (req, res) => {
     res.json(user);
 };
 
-const connectStrava = async (req, res) => {
+const callbackConnectStrava = async (req, res) => {
     const { code } = req.query;
     const { getStravaToken } = require("../services/stravaService");
 
@@ -87,6 +87,6 @@ module.exports = {
     getAccounts,
     getAccount,
     getUserInfo,
-    connectStrava,
+    callbackConnectStrava,
     disconnectStrava,
 };

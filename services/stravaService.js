@@ -27,7 +27,21 @@ async function fetchActivitiesFromStrava(accessToken) {
     return response.data;
 }
 
+const addActivityToStravaService = async (activity, accessToken) => {
+    const response = await axios.post(
+        "https://www.strava.com/api/v3/activities",
+        activity,
+        {
+            headers: {
+                Authorization: `Bearer ${accessToken}`,
+            },
+        }
+    );
+    return response.data;
+};
+
 module.exports = {
     getStravaToken,
     fetchActivitiesFromStrava,
+    addActivityToStravaService,
 };

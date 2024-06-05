@@ -22,6 +22,29 @@ const getActivity = async (req, res) => {
     res.json(activity);
 };
 
+const addActivityToStrava = async (req, res) => {
+    try {
+        const activity = req.body;
+        const stravaAccessToken = req.user.stravaAccessToken;
+
+        const stravaResponse = await addActivityToStravaService(
+            activity,
+            stravaAccessToken
+        );
+
+        const newActivity = new Activity({
+            ...activity,
+            start_date: new Date(activity.start_date),
+        });
+        await newActivity.save();
+
+        res.json({ stravaResponse, newActivity });
+    } catch (error) {
+        console.error("Error adding activity:", error);
+        res.status(500).json({ message: "Server Error", error: error.message });
+    }
+};
+
 async function addActivitiesToAccount(athleteId, accountId, activities) {
     for (const activityData of activities) {
         const existingActivity = await Activity.findOne({
@@ -49,4 +72,9 @@ async function addActivitiesToAccount(athleteId, accountId, activities) {
     }
 }
 
-module.exports = { getActivities, getActivity, addActivitiesToAccount };
+module.exports = {
+    getActivities,
+    getActivity,
+    addActivitiesToAccount,
+    addActivityToStrava,
+};

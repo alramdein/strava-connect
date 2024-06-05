@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const { auth } = require("../middleware/auth");
 const {
-    connectStrava,
+    callbackConnectStrava,
     disconnectStrava,
 } = require("../controllers/accountController");
 
@@ -13,7 +13,7 @@ router.get("/connect", (req, res) => {
 });
 
 // Strava OAuth callback
-router.get("/callback", connectStrava);
+router.get("/callback", callbackConnectStrava);
 
 // Disconnect Strava account
 router.post("/disconnect", auth, disconnectStrava);
